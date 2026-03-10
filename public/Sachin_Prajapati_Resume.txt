@@ -1,0 +1,35 @@
+Sachin Prajapati
+Frontend Developer (React | TypeScript)
+
+Current Location: Noida Sector 140, Uttar Pradesh, India
+Permanent Address: Najibabad, Bijnor, Uttar Pradesh
+Phone: 8958477243, 7579971289
+Email: sachin13579p@gmail.com
+GitHub: https://github.com/sachin-prajapati-k
+LinkedIn: https://www.linkedin.com/in/sachin-prajapati-451515252
+Portfolio: https://www.sachinprajapati.co.in
+
+Professional Summary
+Frontend Developer with 1+ year of experience building responsive and high-performance web applications using React, TypeScript, Tailwind CSS, Bootstrap, and Material UI.
+Also brings 3 years of experience as an IT Trainer, combining technical knowledge with strong communication and mentoring skills.
+
+Experience
+Frontend Developer, Regent Lighting Asia Pvt. Ltd. (Feb 2025 - Present)
+- Build and maintain frontend components using React, TypeScript, Tailwind CSS, Bootstrap, and MUI
+- Integrate REST APIs and improve application performance and responsiveness
+- Contributed to a large Next.js to React.js migration to resolve performance bottlenecks and type conflicts
+
+IT Trainer, IFCT Computers Pvt. Ltd. (Dec 2021 - Feb 2025)
+- Delivered training in programming, web development, Excel, and data tools
+- Created learning materials and managed student batches and lab operations
+
+Education
+- MCA, Sikkim Manipal University (2025 - Present)
+- B.Sc. Mathematics, MJP Rohilkhand University (2018 - 2021)
+
+Core Skills
+- React.js, TypeScript, JavaScript, HTML5, CSS3
+- Tailwind CSS, Bootstrap, Material UI, Redux
+- Python, Java, C, C++
+- Git, GitHub, Vite, Webpack, Netlify
+- Power BI, Tableau, Advanced Excel

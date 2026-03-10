@@ -6,6 +6,6 @@ export const getResume = tool({
     'This tool show my resume.',
   parameters: z.object({}),
   execute: async () => {
-    return "You can download my resume by clicking on the link above.";
+    return "You can download my resume from the card above.";
   },
 });

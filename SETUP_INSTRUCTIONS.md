@@ -1,4 +1,4 @@
-# 🚀 Portfolio Setup Instructions for Yuvraj
+# 🚀 Portfolio Setup Instructions for Sachin
 
 ## 📋 **Step 1: Install Dependencies**
 
@@ -45,18 +45,18 @@ Visit `http://localhost:3000` to test your portfolio.
 
 ## ✅ **What's Been Updated:**
 
-- ✅ **Personal Information**: Yuvraj Singh, 22, Gurugram
-- ✅ **Contact Details**: Email, phone, LinkedIn, GitHub, Instagram
-- ✅ **AI Personality**: Customized with your background and experience
-- ✅ **API Integration**: Switched from OpenAI to Mistral AI
-- ✅ **Professional Experience**: All your internships and projects
-- ✅ **Skills**: Data science, AI, machine learning focus
+- ✅ **Personal Information**: Sachin Prajapati, frontend developer profile
+- ✅ **Contact Details**: Email, both phone numbers, LinkedIn, GitHub, portfolio
+- ✅ **AI Personality**: Customized around frontend development and practical work experience
+- ✅ **Project Data**: Updated with professional work and selected GitHub projects
+- ✅ **Skills**: Frontend, programming, tooling, and analytics skills
+- ✅ **Visual Identity**: Replaced core identity assets with Sachin's profile assets
 
 ## 🎨 **Next Steps:**
 
-1. **Add your projects** (I'll help you with this)
-2. **Customize colors** (if desired)
-3. **Add your own logo** (when ready)
+1. **Refine project descriptions** if you want more exact wording
+2. **Replace placeholder project previews** with real screenshots later
+3. **Add a final resume PDF** if needed
 4. **Test the AI chat** functionality
 
 ## 🔧 **Troubleshooting:**

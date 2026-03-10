@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#0f172a"/>
+  <rect x="48" y="48" width="1184" height="624" rx="30" fill="#111827" stroke="#334155"/>
+  <text x="90" y="180" fill="#f8fafc" font-family="Arial, sans-serif" font-size="56" font-weight="700">Frontend Optimization</text>
+  <text x="90" y="250" fill="#38bdf8" font-family="Arial, sans-serif" font-size="34">Migration Project</text>
+  <text x="90" y="360" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="26">React.js " TypeScript " Performance " Debugging</text>
+  <text x="90" y="410" fill="#94a3b8" font-family="Arial, sans-serif" font-size="22">Production-focused work at Regent Lighting Asia Pvt. Ltd.</text>
+</svg>

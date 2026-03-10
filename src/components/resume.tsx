@@ -2,19 +2,18 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDownToLine, Download, Eye, File } from 'lucide-react';
-import Image from 'next/image';
+import { Download } from 'lucide-react';
 
 export function Resume() {
   // Resume details
   const resumeDetails = {
-    title: "Yuvraj's Resume",
-    description: 'Data Science & AI Enthusiast',
-    fileType: 'PDF',
-    lastUpdated: 'July 2025',
-    fileSize: '0.3 MB',
-    previewImageSrc: '/Resume_Yuvraj_Singh_AI.png',
-    downloadUrl: '/Resume_Yuvraj_Singh_AI.pdf',
+    title: "Sachin's Resume",
+    description: 'Frontend Developer (React | TypeScript)',
+    fileType: 'TXT',
+    lastUpdated: 'March 2026',
+    fileSize: '2 KB',
+    previewImageSrc: '/Sachin_Prajapati_Resume.svg',
+    downloadUrl: '/Sachin_Prajapati_Resume.txt',
   };
 
   const handleDownload = () => {

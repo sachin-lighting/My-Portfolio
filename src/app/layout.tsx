@@ -14,50 +14,49 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Yuvraj Singh Portfolio",
-  description: "Interactive portfolio with an AI-powered Memoji that answers questions about me, my skills, and my experience",
+  title: "Sachin Prajapati Portfolio",
+  description: "Interactive portfolio for Sachin Prajapati, a Frontend Developer focused on React, TypeScript, UI performance, and responsive web applications.",
   keywords: [
-    "Yuvraj Singh", 
-    "Portfolio", 
-    "Developer", 
-    "AI", 
-    "Interactive", 
-    "Memoji", 
+    "Sachin Prajapati",
+    "Portfolio",
+    "Frontend Developer",
+    "React",
+    "TypeScript",
+    "Tailwind CSS",
     "Web Development",
-    "Full Stack",
-    "Next.js",
-    "React"
+    "UI Performance",
+    "Responsive Design",
+    "Noida"
   ],
   authors: [
     {
-      name: "Yuvraj Singh",
-      url: "https://yuvraj.bio",
+      name: "Sachin Prajapati",
+      url: "https://www.sachinprajapati.co.in",
     },
   ],
-  creator: "Yuvraj Singh",
+  creator: "Sachin Prajapati",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://yuvraj.bio",
-    title: "Yuvraj Singh Portfolio",
-    description: "Interactive portfolio with an AI-powered Memoji that answers questions about me",
-    siteName: "Yuvraj Singh Portfolio",
+    url: "https://www.sachinprajapati.co.in",
+    title: "Sachin Prajapati Portfolio",
+    description: "Interactive frontend developer portfolio with project highlights, skills, and experience.",
+    siteName: "Sachin Prajapati Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Yuvraj Singh Portfolio",
-    description: "Interactive portfolio with an AI-powered Memoji that answers questions about me",
-    creator: "@yuvrajsingh",
+    title: "Sachin Prajapati Portfolio",
+    description: "Interactive frontend developer portfolio with React, TypeScript, and performance-focused work.",
   },
   icons: {
     icon: [
       {
-        url: "/logo-yuvi.svg",
-        sizes: "any",
+        url: "/sachin-logo.png",
+        sizes: "512x288",
       }
     ],
-    shortcut: "/logo-yuvi.svg?v=2",
-    apple: "/apple-touch-icon.svg?v=2",
+    shortcut: "/sachin-logo.png",
+    apple: "/sachin-logo.png",
   },
 };
 
@@ -70,7 +69,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-        <link rel="icon" href="/logo-yuvi.svg" sizes="any" />
+        <link rel="icon" href="/sachin-logo.png" sizes="512x288" />
         {/* Google Analytics */}
         <Script
           async

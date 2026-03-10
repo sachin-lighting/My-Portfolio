@@ -2,13 +2,11 @@
 
 import { motion } from 'framer-motion';
 import { CalendarDays, Code2, Globe } from 'lucide-react';
-import { useRouter } from 'next/navigation';
 
 const InternshipCard = () => {
   const openMail = () => {
-    window.open('mailto:yuvraj0412s@gmail.com', '_blank');
+    window.open('mailto:sachin13579p@gmail.com', '_blank');
   };
-  const router = useRouter();
 
   return (
     <motion.div
@@ -23,17 +21,17 @@ const InternshipCard = () => {
           {/* Avatar placeholder */}
           <div className="bg-muted h-16 w-16 overflow-hidden rounded-full shadow-md">
             <img
-              src="/profile-yuvi.jpg"
-              alt="Yuvraj's avatar"
+              src="/sachin-profile.png"
+              alt="Sachin's avatar"
               className="h-full w-full object-cover"
             />
           </div>
           <div>
             <h2 className="text-foreground text-2xl font-semibold">
-              Yuvraj Singh
+              Sachin Prajapati
             </h2>
             <p className="text-muted-foreground text-sm">
-              Internship Application
+              Frontend Developer
             </p>
           </div>
         </div>
@@ -57,7 +55,7 @@ const InternshipCard = () => {
           <div>
             <p className="text-foreground text-sm font-medium">Duration</p>
             <p className="text-muted-foreground text-sm">
-              currently open for contributions August (2025)
+              Currently working and open to strong frontend opportunities
             </p>
           </div>
         </div>
@@ -66,7 +64,7 @@ const InternshipCard = () => {
           <div>
             <p className="text-foreground text-sm font-medium">Location</p>
             <p className="text-muted-foreground text-sm">
-              Preferably Gurugram
+              Noida, Remote, or nearby NCR locations
             </p>
           </div>
         </div>
@@ -78,16 +76,15 @@ const InternshipCard = () => {
             <p className="text-foreground text-sm font-medium">Tech stack</p>
             <div className="text-muted-foreground grid grid-cols-1 gap-y-1 text-sm sm:grid-cols-2">
               <ul className="decoration-none list-disc pl-4">
-                <li>Python, Next.js, SQL</li>
-                <li>Flask, Django</li>
-                <li>OpenAI, Mistral, Claude</li>
-                <li>Prompt engineering, fine-tuning</li>
+                <li>React.js, TypeScript, JavaScript</li>
+                <li>HTML5, CSS3, Tailwind CSS</li>
+                <li>Bootstrap, Material UI, Redux</li>
+                <li>REST API integration</li>
               </ul>
               <ul className="list-disc pl-4">
-                <li>JavaScript, React</li>
-                <li>Hugging Face Transformers</li>
-                <li>TensorFlow, PyTorch</li>
-                <li>LangChain + AI agent workflows</li>
+                <li>Performance optimization and debugging</li>
+                <li>Git, GitHub, Vite, Webpack</li>
+                <li>Responsive and cross-browser UI</li>
                 <li>
                   <a
                     href="/chat?query=What%20are%20your%20skills%3F%20Give%20me%20a%20list%20of%20your%20soft%20and%20hard%20skills."
@@ -108,9 +105,9 @@ const InternshipCard = () => {
           What I bring
         </p>
         <p className="text-foreground text-sm">
-          Real-world AI dev experience. <br /> 
-          Blending AI passion with hands-on development to bring tech ideas to life. <br /> 
-          I ship fast, and love building useful things that actually work.
+          Practical frontend development experience. <br />
+          Strong debugging mindset with a focus on responsiveness and maintainability. <br />
+          A solid communication background from teaching that helps me work clearly with teams and users.
         </p>
       </div>
 
@@ -118,9 +115,8 @@ const InternshipCard = () => {
       <div className="mt-8">
         <p className="text-foreground mb-2 text-lg font-semibold">Goal</p>
         <p className="text-foreground text-sm">
-          Join a bold, innovative team building AI-powered tools that matter. I
-          want to improve fast, contribute hard, and leave a mark. I’m fast,
-          flexible, and HUNGRYYYYY 🔥
+          Join a team building polished digital products where performance, clean UI, and product thinking matter.
+          I want to keep growing as a frontend engineer and contribute real value from day one.
         </p>
       </div>
 

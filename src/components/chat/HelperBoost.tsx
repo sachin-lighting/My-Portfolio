@@ -30,14 +30,13 @@ import { Drawer } from 'vaul';
 
 interface HelperBoostProps {
   submitQuery?: (query: string) => void;
-  setInput?: (value: string) => void;
 }
 
 const questions = {
   Me: 'Who are you? I want to know more about you.',
   Projects: 'What are your projects? What are you working on right now?',
   Skills: 'What are your skills? Give me a list of your soft and hard skills.',
-  Fun: "What the craziest thing you've ever done? (mb?) What are your hobbies? ",
+  Fun: "What are your hobbies? What is a bold career move you've made?",
   Contact:
     'How can I reach you? What kind of project would make you say "yes" immediately?',
 };
@@ -52,13 +51,13 @@ const questionConfig = [
 
 // Helper drawer data
 const specialQuestions = [
-  'Bike you said?? Show me!',
+  'What hobbies do you enjoy outside coding?',
   'Who are you?',
   'Can I see your resume?',
   'What projects are you most proud of?',
   'What are your skills?',
   'How can I reach you?',
-  "What's the craziest thing you've ever done?",
+  "What's a bold move you've made in your career?",
 ];
 
 const questionsByCategory = [
@@ -68,7 +67,7 @@ const questionsByCategory = [
     icon: UserSearch,
     questions: [
       'Who are you?',
-      'What are your passions?',
+      'What are your strengths as a frontend developer?',
       'How did you get started in tech?',
       'Where do you see yourself in 5 years?',
     ],
@@ -104,10 +103,10 @@ const questionsByCategory = [
     name: 'Fun',
     icon: PartyPopper,
     questions: [
-      'Bike you said?? Show me!',
-      "What's the craziest thing you've ever done?",
-      'Mac or PC?',
-      'what sports do you like?',
+      'What hobbies do you enjoy outside coding?',
+      "What's a bold move you've made in your career?",
+      'What games or activities do you like?',
+      'What sports do you like?',
       'What are you certain about that 90% get wrong?',
     ],
   },
@@ -145,7 +144,6 @@ const AnimatedChevron = () => {
 
 export default function HelperBoost({
   submitQuery,
-  setInput,
 }: HelperBoostProps) {
   const [isVisible, setIsVisible] = useState(true);
   const [open, setOpen] = useState(false);

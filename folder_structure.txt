@@ -11,17 +11,14 @@
 ├── pnpm-lock.yaml
 ├── postcss.config.mjs
 ├── public
-│   ├── avatar-landing.png
-│   ├── favicon.svg
 │   ├── final_memojis_ios.mp4
 │   ├── final_memojis.webm
 │   ├── landing-memojis.png
-│   ├── logo-yuvi.svg
-│   ├── Plant_disease_detectionwebsite.png
-│   ├── profile-yuvi-03.jpeg
-│   ├── profile-yuvi.jpg
-│   ├── Resume_Yuvraj_Singh_AI.pdf
-│   └── Resume_Yuvraj_Singh_AI.png
+│   ├── Sachin_Prajapati_Resume.svg
+│   ├── Sachin_Prajapati_Resume.txt
+│   ├── sachin-logo.png
+│   ├── sachin-profile.png
+│   └── projects
 ├── README.md
 ├── SETUP_INSTRUCTIONS.md
 ├── src

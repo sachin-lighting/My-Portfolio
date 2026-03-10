@@ -11,7 +11,6 @@ import {
 import { motion } from 'framer-motion';
 import { X } from 'lucide-react';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation'; // Importation correcte pour Next.js 13+
 import { useState } from 'react';
 
 // Added a trigger prop to accept custom triggers
@@ -21,7 +20,6 @@ interface WelcomeModalProps {
 
 export default function WelcomeModal({ trigger }: WelcomeModalProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const router = useRouter(); // Initialisation du router avec useRouter
 
   // Default trigger is the logo
   const defaultTrigger = (
@@ -31,13 +29,13 @@ export default function WelcomeModal({ trigger }: WelcomeModalProps) {
       onClick={() => setIsOpen(true)}
     >
       <Image
-        src="/logo-yuvi.svg"
+        src="/sachin-logo.png"
         width={100}
         height={100}
         alt="Logo"
         className="w-6 md:w-8"
       />
-      <span className="sr-only">About Yuvi</span>
+      <span className="sr-only">About Sachin</span>
     </Button>
   );
 
@@ -69,7 +67,7 @@ export default function WelcomeModal({ trigger }: WelcomeModalProps) {
             <DialogHeader className="relative flex flex-row items-start justify-between px-8 pt-8 pb-6">
               <div>
                 <DialogTitle className="flex items-center gap-2 text-4xl font-bold tracking-tight">
-                  Welcome to Yuvraj's AI Portfolio
+                  Welcome to Sachin&apos;s Portfolio
                 </DialogTitle>
                 <DialogDescription className="mt-2 text-base">
                   {/*My interactive AI portfolio experience*/}
@@ -92,12 +90,12 @@ export default function WelcomeModal({ trigger }: WelcomeModalProps) {
                 {/* What section */}
                 <div className="space-y-3">
                   <h3 className="text-primary flex items-center gap-2 text-xl font-semibold">
-                    What's ????
+                    What&apos;s ????
                   </h3>
                   <p className="text-accent-foreground text-base leading-relaxed">
-                    I'm so excited to present my{' '}
-                    <strong>brand new AI Portfolio.</strong>
-                    <br /> Whether you're a recruiter, a friend, family member,
+                    I&apos;m so excited to present my{' '}
+                    <strong>interactive frontend portfolio.</strong>
+                    <br /> Whether you&apos;re a recruiter, a friend, family member,
                     or just curious, feel free to ask anything you want!
                   </p>
                 </div>
@@ -108,11 +106,11 @@ export default function WelcomeModal({ trigger }: WelcomeModalProps) {
                     Why ???
                   </h3>
                   <p className="text-accent-foreground text-base leading-relaxed">
-                    Traditional portfolios can be limiting. <br /> They can't
-                    adapt to every visitor's specific needs. <br /> My portfolio
+                    Traditional portfolios can be limiting. <br /> They can&apos;t
+                    adapt to every visitor&apos;s specific needs. <br /> My portfolio
                     becomes{' '}
                     <strong>
-                      exactly what you're interested in knowing about me and my
+                      exactly what you&apos;re interested in knowing about me and my
                       work.
                     </strong>
                   </p>

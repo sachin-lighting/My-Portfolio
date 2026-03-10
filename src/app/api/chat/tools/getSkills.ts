@@ -6,6 +6,6 @@ export const getSkills = tool({
     'This tool show a list of my skills.',
   parameters: z.object({}),
   execute: async () => {
-    return "You can see all my skills above.";
+    return "You can see all my frontend, programming, and core skills above.";
   },
 });

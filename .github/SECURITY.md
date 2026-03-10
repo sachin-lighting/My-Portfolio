@@ -1,7 +1,7 @@
 # Security Policy
 
 ## Introduction
-The security of the **AI-Native Portfolio** is a top priority. We are dedicated to ensuring the application remains secure for everyone and appreciate the vital role the community plays in this effort. This document outlines our security procedures and how you can responsibly report a vulnerability.
+The security of this portfolio project is a top priority. We are dedicated to ensuring the application remains secure for everyone and appreciate the vital role the community plays in this effort. This document outlines our security procedures and how you can responsibly report a vulnerability.
 
 ---
 
@@ -22,7 +22,7 @@ We take all security reports seriously. If you discover a vulnerability, please 
 
 Instead, please contact us at:
 
-📧 **Email:** yuvraj0412s@gmail.com
+📧 **Email:** sachin13579p@gmail.com
 
 When reporting, please include:
 
