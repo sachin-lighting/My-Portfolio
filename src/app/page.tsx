@@ -65,7 +65,7 @@ export default function Home() {
   useEffect(() => {
     // Précharger les assets du chat en arrière-plan
     const img = new window.Image();
-    img.src = '/avatar-memoji.png';
+    img.src = '/divyank-profile.png';
 
     // Précharger les vidéos aussi
     const linkWebm = document.createElement('link');
@@ -138,15 +138,15 @@ export default function Home() {
         </h1>
       </motion.div>
 
-      {/* centre memoji */}
-      <div className="relative z-10 h-52 w-48 overflow-hidden sm:h-72 sm:w-72">
+      {/* center profile photo */}
+      <div className="relative z-10 h-52 w-48 overflow-hidden rounded-3xl sm:h-72 sm:w-72">
         <Image
-          src="/avatar-memoji.png"
-          alt="Hero memoji"
+          src="/divyank-profile.png"
+          alt="Divyank Jha"
           width={2000}
           height={2000}
           priority
-          className="h-full w-full object-contain"
+          className="h-full w-full object-cover object-top"
         />
       </div>
 

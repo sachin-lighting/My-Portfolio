@@ -12,7 +12,7 @@ export function Presentation() {
     location: 'Noida, Uttar Pradesh, India',
     description:
       "Hey 👋\nI'm Sachin, a Frontend Developer who enjoys building responsive, high-performance web applications with React and TypeScript.\nI focus on clean UI, smooth user experience, strong debugging, and practical performance improvements that make products feel faster and more reliable.",
-    src: '/sachin-profile.png',
+    src: '/divyank-profile.png',
     fallbackSrc:
       'https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3',
   };
