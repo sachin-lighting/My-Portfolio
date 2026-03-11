@@ -54,9 +54,9 @@ const Avatar = dynamic<AvatarProps>(
             onClick={() => (window.location.href = '/')}
           >
             <img
-              src="/landing-memojis.png"
+              src="/avatar-memoji.png"
               alt="Sachin avatar"
-              className="h-full w-full scale-[1.8] object-contain"
+              className="h-full w-full object-contain"
             />
           </div>
         </div>

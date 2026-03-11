@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import Image from 'next/image';
 import React from 'react';
 
@@ -18,7 +18,7 @@ export function Presentation() {
   };
 
   // Animation variants for text elements
-  const textVariants = {
+  const textVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
@@ -28,7 +28,7 @@ export function Presentation() {
   };
 
   // Animation for the entire paragraph rather than word-by-word
-  const paragraphAnimation = {
+  const paragraphAnimation: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,

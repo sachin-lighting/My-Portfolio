@@ -4,7 +4,7 @@ import FluidCursor from '@/components/FluidCursor';
 import { Button } from '@/components/ui/button';
 import { GithubButton } from '@/components/ui/github-button';
 import WelcomeModal from '@/components/welcome-modal';
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import {
   ArrowRight,
   BriefcaseBusiness,
@@ -45,27 +45,27 @@ export default function Home() {
     router.push(`/chat?query=${encodeURIComponent(query)}`);
 
   /* hero animations (unchanged) */
-  const topElementVariants = {
+  const topElementVariants: Variants = {
     hidden: { opacity: 0, y: -60 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { type: 'ease', duration: 0.8 },
+      transition: { duration: 0.8, ease: 'easeOut' },
     },
   };
-  const bottomElementVariants = {
+  const bottomElementVariants: Variants = {
     hidden: { opacity: 0, y: 80 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { type: 'ease', duration: 0.8, delay: 0.2 },
+      transition: { duration: 0.8, delay: 0.2, ease: 'easeOut' },
     },
   };
 
   useEffect(() => {
     // Précharger les assets du chat en arrière-plan
     const img = new window.Image();
-    img.src = '/landing-memojis.png';
+    img.src = '/avatar-memoji.png';
 
     // Précharger les vidéos aussi
     const linkWebm = document.createElement('link');
@@ -141,12 +141,12 @@ export default function Home() {
       {/* centre memoji */}
       <div className="relative z-10 h-52 w-48 overflow-hidden sm:h-72 sm:w-72">
         <Image
-          src="/landing-memojis.png"
+          src="/avatar-memoji.png"
           alt="Hero memoji"
           width={2000}
           height={2000}
           priority
-          className="translate-y-1 scale-[1.2] object-cover"
+          className="h-full w-full object-contain"
         />
       </div>
 
@@ -178,7 +178,7 @@ export default function Home() {
               type="submit"
               disabled={!input.trim()}
               aria-label="Submit question"
-              className="flex items-center justify-center rounded-full bg-[#0171E3] p-2.5 text-white transition-colors hover:bg-blue-600 disabled:opacity-70 dark:bg-blue-600 dark:hover:bg-blue-700"
+              className="flex items-center cursor-pointer justify-center rounded-full bg-[#0171E3] p-2.5 text-white transition-colors hover:bg-blue-600 disabled:opacity-70 dark:bg-blue-600 dark:hover:bg-blue-700"
             >
               <ArrowRight  className="h-5 w-5" />
             </button>
