@@ -1,6 +1,6 @@
 import { mistral } from '@ai-sdk/mistral';
 import { streamText } from 'ai';
-import { SYSTEM_PROMPT } from './prompt';
+import { OPEN_SYSTEM_PROMPT, SYSTEM_PROMPT } from './prompt';
 import { getContact } from './tools/getContact';
 import { getCrazy } from './tools/getCrazy';
 import { getInternship } from './tools/getInternship';
@@ -29,10 +29,23 @@ function errorHandler(error: unknown) {
 
 export async function POST(req: Request) {
   try {
-    const { messages } = await req.json();
+    if (!process.env.MISTRAL_API_KEY) {
+      return new Response(
+        'Server configuration error: missing MISTRAL_API_KEY',
+        {
+          status: 500,
+        }
+      );
+    }
+
+    const { messages, mode } = await req.json();
+    const urlMode = new URL(req.url).searchParams.get('mode');
     console.log('[CHAT-API] Incoming messages:', messages);
 
-    messages.unshift(SYSTEM_PROMPT);
+    const selectedMode = mode ?? urlMode;
+    const selectedPrompt =
+      selectedMode === 'open' ? OPEN_SYSTEM_PROMPT : SYSTEM_PROMPT;
+    const chatMessages = [selectedPrompt, ...messages];
 
     const tools = {
       getProjects,
@@ -48,7 +61,7 @@ export async function POST(req: Request) {
 
     const result = streamText({
       model: mistral('mistral-large-latest'),
-      messages,
+      messages: chatMessages,
       toolCallStreaming: true,
       tools,
       maxSteps: 2,

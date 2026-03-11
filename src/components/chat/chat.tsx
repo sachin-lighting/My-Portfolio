@@ -75,6 +75,8 @@ const MOTION_CONFIG = {
   },
 };
 
+type ChatMode = 'personal' | 'open';
+
 const Chat = () => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const searchParams = useSearchParams();
@@ -82,6 +84,7 @@ const Chat = () => {
   const [autoSubmitted, setAutoSubmitted] = useState(false);
   const [loadingSubmit, setLoadingSubmit] = useState(false);
   const [isTalking, setIsTalking] = useState(false);
+  const [chatMode, setChatMode] = useState<ChatMode>('personal');
 
   const {
     messages,
@@ -173,10 +176,17 @@ const Chat = () => {
   const submitQuery = (query) => {
     if (!query.trim() || isToolInProgress) return;
     setLoadingSubmit(true);
-    append({
-      role: 'user',
-      content: query,
-    });
+    append(
+      {
+        role: 'user',
+        content: query,
+      },
+      {
+        body: {
+          mode: chatMode,
+        },
+      }
+    );
   };
 
   useEffect(() => {
@@ -251,17 +261,13 @@ const Chat = () => {
       </div>
 
       {/* Fixed Avatar Header with Gradient */}
-      <div
-        className="fixed top-0 right-0 left-0 z-50 bg-gradient-to-b from-white via-white/95 via-50% to-transparent dark:from-black dark:via-black/95 dark:via-50% dark:to-transparent"
-      >
+      <div className="fixed top-0 right-0 left-0 z-50 bg-gradient-to-b from-white via-white/95 via-50% to-transparent dark:from-black dark:via-black/95 dark:via-50% dark:to-transparent">
         <div
           className={`transition-all duration-300 ease-in-out ${hasActiveTool ? 'pt-6 pb-0' : 'py-6'}`}
         >
           <div className="flex justify-center">
             <ClientOnly>
-              <Avatar
-                hasActiveTool={hasActiveTool}
-              />
+              <Avatar hasActiveTool={hasActiveTool} />
             </ClientOnly>
           </div>
 
@@ -328,22 +334,22 @@ const Chat = () => {
           </AnimatePresence>
         </div>
 
-{/* Fixed Bottom Bar */}
-<div
-  className="sticky bottom-0 px-2 pt-3 md:px-0 md:pb-4 transition-colors duration-300 bg-white dark:bg-black"
->
-  <div className="relative flex flex-col items-center gap-3">
-    <HelperBoost submitQuery={submitQuery} />
-    <ChatBottombar
-      input={input}
-      handleInputChange={handleInputChange}
-      handleSubmit={onSubmit}
-      isLoading={isLoading}
-      stop={handleStop}
-      isToolInProgress={isToolInProgress}
-    />
-  </div>
-</div>
+        {/* Fixed Bottom Bar */}
+        <div className="sticky bottom-0 bg-white px-2 pt-3 transition-colors duration-300 md:px-0 md:pb-4 dark:bg-black">
+          <div className="relative flex flex-col items-center gap-3">
+            <HelperBoost submitQuery={submitQuery} />
+            <ChatBottombar
+              input={input}
+              handleInputChange={handleInputChange}
+              handleSubmit={onSubmit}
+              isLoading={isLoading}
+              stop={handleStop}
+              isToolInProgress={isToolInProgress}
+              chatMode={chatMode}
+              onChatModeChange={setChatMode}
+            />
+          </div>
+        </div>
 
         <a
           href="https://www.linkedin.com/in/sachin-prajapati-451515252"
