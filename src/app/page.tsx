@@ -134,7 +134,7 @@ export default function Home() {
           Hey, I&apos;m Sachin Prajapati 👋
         </h2>
         <h1 className="text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl">
-          Frontend Portfolio
+          Sachin's Portfolio
         </h1>
       </motion.div>
 
@@ -142,7 +142,7 @@ export default function Home() {
       <div className="relative z-10 h-52 w-48 overflow-hidden rounded-3xl sm:h-72 sm:w-72">
         <Image
           src="/divyank-profile.png"
-          alt="Divyank Jha"
+          alt="Sachin Prajapati"
           width={2000}
           height={2000}
           priority
