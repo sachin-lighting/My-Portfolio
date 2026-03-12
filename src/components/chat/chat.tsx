@@ -77,7 +77,6 @@ const MOTION_CONFIG = {
     ease: 'easeOut' as const,
   },
 };
-
 type ChatMode = 'personal' | 'open';
 
 const Chat = () => {
