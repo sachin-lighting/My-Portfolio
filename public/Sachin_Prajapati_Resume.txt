@@ -5,7 +5,6 @@ Current Location: Noida Sector 140, Uttar Pradesh, India
 Permanent Address: Najibabad, Bijnor, Uttar Pradesh
 Phone: 8958477243, 7579971289
 Email: sachin13579p@gmail.com
-GitHub: https://github.com/sachin-prajapati-k
 LinkedIn: https://www.linkedin.com/in/sachin-prajapati-451515252
 Portfolio: https://www.sachinprajapati.co.in
 
@@ -31,5 +30,5 @@ Core Skills
 - React.js, TypeScript, JavaScript, HTML5, CSS3
 - Tailwind CSS, Bootstrap, Material UI, Redux
 - Python, Java, C, C++
-- Git, GitHub, Vite, Webpack, Netlify
+- Git, Vite, Webpack, Netlify
 - Power BI, Tableau, Advanced Excel

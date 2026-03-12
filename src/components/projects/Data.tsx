@@ -48,12 +48,7 @@ const PROJECT_CONTENT = [
       'E-commerce Flow',
     ],
     date: '2025',
-    links: [
-      {
-        name: 'GitHub Repository',
-        url: 'https://github.com/sachin-prajapati-k/My-shopping-project',
-      },
-    ],
+    links: [],
     images: [
       {
         src: '/projects/shopping-project-preview.svg',
@@ -74,12 +69,7 @@ const PROJECT_CONTENT = [
       'Productivity App',
     ],
     date: '2025',
-    links: [
-      {
-        name: 'GitHub Repository',
-        url: 'https://github.com/sachin-prajapati-k/expense-tracker',
-      },
-    ],
+    links: [],
     images: [
       {
         src: '/projects/expense-tracker-preview.svg',
@@ -100,12 +90,7 @@ const PROJECT_CONTENT = [
       'Frontend Logic',
     ],
     date: '2024',
-    links: [
-      {
-        name: 'GitHub Repository',
-        url: 'https://github.com/sachin-prajapati-k/password-generator',
-      },
-    ],
+    links: [],
     images: [
       {
         src: '/projects/password-generator-preview.svg',
@@ -126,12 +111,7 @@ const PROJECT_CONTENT = [
       'Responsive Design',
     ],
     date: '2024',
-    links: [
-      {
-        name: 'GitHub Repository',
-        url: 'https://github.com/sachin-prajapati-k/marlos-pizza-online-shop',
-      },
-    ],
+    links: [],
     images: [
       {
         src: '/projects/marlos-pizza-preview.svg',
@@ -152,12 +132,7 @@ const PROJECT_CONTENT = [
       'Utility App',
     ],
     date: '2024',
-    links: [
-      {
-        name: 'GitHub Repository',
-        url: 'https://github.com/sachin-prajapati-k/currency-changer',
-      },
-    ],
+    links: [],
     images: [
       {
         src: '/projects/currency-changer-preview.svg',

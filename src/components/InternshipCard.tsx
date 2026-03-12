@@ -83,7 +83,7 @@ const InternshipCard = () => {
               </ul>
               <ul className="list-disc pl-4">
                 <li>Performance optimization and debugging</li>
-                <li>Git, GitHub, Vite, Webpack</li>
+                <li>Git, Vite, Webpack</li>
                 <li>Responsive and cross-browser UI</li>
                 <li>
                   <a

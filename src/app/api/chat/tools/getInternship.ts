@@ -19,7 +19,6 @@ export const getInternship = tool({
 - Email: sachin13579p@gmail.com
 - Phone: +91 8958477243 / +91 7579971289
 - LinkedIn: https://linkedin.com/in/sachin-prajapati-451515252
-- GitHub: https://github.com/sachin-prajapati-k
 - Portfolio: https://www.sachinprajapati.co.in
 
 Let's build something clean, fast, and useful.

@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Mail, Phone, Linkedin, Github, Globe, MapPin, Home } from 'lucide-react';
+import { Mail, Phone, Linkedin, Globe, MapPin, Home } from 'lucide-react';
 
 export function Contact() {
   const contactInfo = [
@@ -33,13 +33,6 @@ export function Contact() {
       value: 'sachin-prajapati-451515252',
       href: 'https://www.linkedin.com/in/sachin-prajapati-451515252',
       color: 'text-blue-700'
-    },
-    {
-      icon: <Github className="h-5 w-5" />,
-      title: 'GitHub',
-      value: 'sachin-prajapati-k',
-      href: 'https://github.com/sachin-prajapati-k',
-      color: 'text-gray-800'
     },
     {
       icon: <Phone className="h-5 w-5" />,

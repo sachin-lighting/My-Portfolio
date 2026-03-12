@@ -2,7 +2,6 @@
 
 import FluidCursor from '@/components/FluidCursor';
 import { Button } from '@/components/ui/button';
-import { GithubButton } from '@/components/ui/github-button';
 import WelcomeModal from '@/components/welcome-modal';
 import { motion, type Variants } from 'framer-motion';
 import {
@@ -93,16 +92,8 @@ export default function Home() {
         </div>
       </div>
 
-      {/* GitHub button */}
       <div className="absolute top-6 right-8 z-20 flex items-center gap-2">
         <ThemeToggle />
-        <GithubButton
-          //targetStars={69}
-          animationDuration={1.5}
-          label="Star"
-          size={'sm'}
-          repoUrl="https://github.com/sachin-prajapati-k/My-shopping-project"
-        />
       </div>
 
       <div className="absolute top-6 left-6 z-20">

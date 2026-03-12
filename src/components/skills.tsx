@@ -50,7 +50,6 @@ const Skills = () => {
       icon: <PenTool className="h-5 w-5" />,
       skills: [
         'Git',
-        'GitHub',
         'Vite',
         'Webpack',
         'Netlify',
