@@ -17,6 +17,7 @@ interface SimplifiedChatViewProps {
     chatRequestOptions?: ChatRequestOptions
   ) => Promise<string | null | undefined>;
   addToolResult?: (args: { toolCallId: string; result: string }) => void;
+  shouldDockAvatar?: boolean;
 }
 
 const MOTION_CONFIG = {
@@ -34,6 +35,7 @@ export function SimplifiedChatView({
   isLoading,
   reload,
   addToolResult,
+  shouldDockAvatar = false,
 }: SimplifiedChatViewProps) {
   if (message.role !== 'assistant') return null;
 
@@ -68,6 +70,7 @@ export function SimplifiedChatView({
             <ToolRenderer
               toolInvocations={currentTool}
               messageId={message.id || 'current-msg'}
+              shouldDockAvatar={shouldDockAvatar}
             />
           </div>
         )}

@@ -4,7 +4,13 @@ import { motion, type Variants } from 'framer-motion';
 import Image from 'next/image';
 import React from 'react';
 
-export function Presentation() {
+interface PresentationProps {
+  showFloatingAvatar?: boolean;
+}
+
+export function Presentation({
+  showFloatingAvatar = false,
+}: PresentationProps) {
   // Personal information
   const profile = {
     name: 'Sachin Prajapati',
@@ -12,7 +18,7 @@ export function Presentation() {
     location: 'Noida, Uttar Pradesh, India',
     description:
       "Hey 👋\nI'm Sachin, a Frontend Developer who enjoys building responsive, high-performance web applications with React and TypeScript.\nI focus on clean UI, smooth user experience, strong debugging, and practical performance improvements that make products feel faster and more reliable.",
-    src: '/divyank-profile.png',
+    src: '/sachin-profile.png',
     fallbackSrc:
       'https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3',
   };
@@ -46,6 +52,23 @@ export function Presentation() {
       <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2">
         {/* Image section */}
         <div className="relative mx-auto aspect-square w-full max-w-sm">
+          {showFloatingAvatar && (
+            <motion.div
+              layoutId="chat-avatar"
+              transition={{ type: 'spring', stiffness: 260, damping: 26 }}
+              className="absolute top-3 left-3 z-10 h-20 w-20 overflow-hidden rounded-full shadow-lg ring-4 ring-white dark:ring-black"
+            >
+              <video
+                src="/sachin-avatar.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="h-full w-full scale-[1.08] object-contain object-top mix-blend-multiply"
+                aria-label="Sachin Prajapati avatar"
+              />
+            </motion.div>
+          )}
           <div className="relative h-full w-full overflow-hidden rounded-2xl">
             <motion.div
               initial={{ scale: 0.92, opacity: 0 }}

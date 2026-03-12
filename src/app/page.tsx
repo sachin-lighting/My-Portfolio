@@ -65,7 +65,7 @@ export default function Home() {
   useEffect(() => {
     // Précharger les assets du chat en arrière-plan
     const img = new window.Image();
-    img.src = '/divyank-profile.png';
+    img.src = '/sachin-profile.png';
 
     // Précharger les vidéos aussi
     const linkWebm = document.createElement('link');
@@ -141,7 +141,7 @@ export default function Home() {
       {/* center profile photo */}
       <div className="relative z-10 h-52 w-48 overflow-hidden rounded-3xl sm:h-72 sm:w-72">
         <Image
-          src="/divyank-profile.png"
+          src="/sachin-profile.png"
           alt="Sachin Prajapati"
           width={2000}
           height={2000}
