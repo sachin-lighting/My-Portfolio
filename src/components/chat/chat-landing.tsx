@@ -25,7 +25,7 @@ const ChatLanding: React.FC<ChatLandingProps> = ({ submitQuery }) => {
     },
     {
       icon: <Mail className="h-4 w-4" />,
-      text: 'How can I contact you?',
+      text: 'Share only your current location and direct contact details from your resume.',
     },
   ];
 

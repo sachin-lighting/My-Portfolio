@@ -3,9 +3,9 @@ import { z } from 'zod';
 
 export const getContact = tool({
   description:
-    'This tool shows my contact information.',
+    'This tool shows only my location and direct contact information.',
   parameters: z.object({}),
   execute: async () => {
-    return "Here is my contact information above. Feel free to reach out for frontend roles, collaboration, or project discussions.";
+    return 'Here are my current location and direct contact details above.';
   },
 });

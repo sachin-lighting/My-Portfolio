@@ -43,7 +43,8 @@ export default function WelcomeModal({ trigger }: WelcomeModalProps) {
   const handleContactMe = () => {
     setIsOpen(false);
     // Forcer un rechargement complet de la page avec la requête
-    window.location.href = '/chat?query=How%20can%20I%20contact%20you%3F';
+    window.location.href =
+      '/chat?query=Share%20only%20your%20current%20location%20and%20direct%20contact%20details%20from%20your%20resume.';
   };
 
   return (

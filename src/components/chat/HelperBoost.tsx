@@ -37,8 +37,7 @@ const questions = {
   Projects: 'What are your projects? What are you working on right now?',
   Skills: 'What are your skills? Give me a list of your soft and hard skills.',
   Fun: "What are your hobbies? What is a bold career move you've made?",
-  Contact:
-    'How can I reach you? What kind of project would make you say "yes" immediately?',
+  Contact: 'Share only your current location and direct contact details from your resume.',
 };
 
 const questionConfig = [
@@ -56,7 +55,7 @@ const specialQuestions = [
   'Can I see your resume?',
   'What projects are you most proud of?',
   'What are your skills?',
-  'How can I reach you?',
+  'Share only your current location and direct contact details from your resume.',
   "What's a bold move you've made in your career?",
 ];
 
@@ -115,8 +114,7 @@ const questionsByCategory = [
     name: 'Contact & Future',
     icon: MailIcon,
     questions: [
-      'How can I reach you?',
-      "What kind of project would make you say 'yes' immediately?",
+      'Share only your current location and direct contact details from your resume.',
       'Where are you located?',
     ],
   },

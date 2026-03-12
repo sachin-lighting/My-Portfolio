@@ -23,7 +23,7 @@ const questions = {
   Projects: 'What are your projects? What are you working on right now?',
   Skills: 'What are your skills? Give me a list of your soft and hard skills.',
   Fun: 'What’s the craziest thing you’ve ever done? What are your hobbies?',
-  Contact: 'How can I contact you?',
+  Contact: 'Share only your current location and direct contact details from your resume.',
 } as const;
 
 const questionConfig = [

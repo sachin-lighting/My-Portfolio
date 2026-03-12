@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Mail, Phone, Linkedin, Globe, MapPin, Home } from 'lucide-react';
+import { Mail, Phone, Linkedin, Globe, MapPin } from 'lucide-react';
 
 export function Contact() {
   const contactInfo = [
@@ -42,13 +42,6 @@ export function Contact() {
       color: 'text-emerald-600'
     },
     {
-      icon: <Home className="h-5 w-5" />,
-      title: 'Permanent Address',
-      value: 'Najibabad, Bijnor, Uttar Pradesh',
-      href: 'https://www.google.com/maps/search/Najibabad+Bijnor+Uttar+Pradesh',
-      color: 'text-orange-600'
-    },
-    {
       icon: <Globe className="h-5 w-5" />,
       title: 'Portfolio',
       value: 'sachinprajapati.co.in',
@@ -62,7 +55,7 @@ export function Contact() {
       <div className="text-center space-y-2">
         <h2 className="text-2xl font-bold">Get in Touch</h2>
         <p className="text-muted-foreground">
-          I&apos;m always open to frontend opportunities, collaborations, and conversations around React, TypeScript, performance, and modern UI development.
+          Here are my current location and direct contact details from my resume.
         </p>
       </div>
 
@@ -87,25 +80,11 @@ export function Contact() {
                 className="w-full"
                 onClick={() => window.open(contact.href, '_blank')}
               >
-                {contact.title === 'Location' ? 'View on Map' : `Open ${contact.title}`}
+                {contact.title.includes('Location') ? 'View on Map' : `Open ${contact.title}`}
               </Button>
             </CardContent>
           </Card>
         ))}
-      </div>
-
-      <div className="text-center space-y-4 pt-6">
-        <div className="bg-accent rounded-lg p-6">
-          <h3 className="font-semibold mb-2">What I'm Looking For</h3>
-          <p className="text-sm text-muted-foreground">
-            Frontend Developer roles • React and TypeScript projects • UI performance optimization • Product-focused engineering work • Collaborative teams
-          </p>
-        </div>
-        
-        <p className="text-sm text-muted-foreground">
-          Feel free to reach out for job opportunities, freelance work, or collaboration.
-          I especially enjoy projects where I can improve performance, responsiveness, and overall user experience.
-        </p>
       </div>
     </div>
   );
