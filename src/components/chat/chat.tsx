@@ -1,13 +1,14 @@
 'use client';
 import { useChat } from '@ai-sdk/react';
-import { AnimatePresence, LayoutGroup, motion } from 'framer-motion';
-import dynamic from 'next/dynamic';
+import { AnimatePresence, motion } from 'framer-motion';
 import { useSearchParams } from 'next/navigation';
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { toast } from 'sonner';
 
 // Component imports
-import ChatBottombar from '@/components/chat/chat-bottombar';
+import ChatBottombar, {
+  ChatModeToggle,
+} from '@/components/chat/chat-bottombar';
 import ChatLanding from '@/components/chat/chat-landing';
 import ChatMessageContent from '@/components/chat/chat-message-content';
 import { SimplifiedChatView } from '@/components/chat/simple-chat-view';
@@ -18,55 +19,6 @@ import {
 import WelcomeModal from '@/components/welcome-modal';
 import { Info } from 'lucide-react';
 import HelperBoost from './HelperBoost';
-
-// ClientOnly component for client-side rendering
-//@ts-ignore
-const ClientOnly = ({ children }) => {
-  const [hasMounted, setHasMounted] = useState(false);
-
-  useEffect(() => {
-    setHasMounted(true);
-  }, []);
-
-  if (!hasMounted) {
-    return null;
-  }
-
-  return <>{children}</>;
-};
-
-// Define Avatar component props interface
-interface AvatarProps {
-  hasActiveTool: boolean;
-}
-
-// Dynamic import of Avatar component
-const Avatar = dynamic<AvatarProps>(
-  () =>
-    Promise.resolve(({ hasActiveTool }: AvatarProps) => {
-      return (
-        <div
-          className={`flex items-center justify-center transition-all duration-300 ${hasActiveTool ? 'h-20 w-30' : 'h-28 w-28'}`}
-        >
-          <div
-            className="relative isolate h-full w-full cursor-pointer overflow-hidden rounded-full"
-            onClick={() => (window.location.href = '/')}
-          >
-            <video
-              src="/sachin-avatar.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="h-full w-full scale-[1.08] object-contain object-top mix-blend-multiply"
-              aria-label="Sachin Prajapati avatar"
-            />
-          </div>
-        </div>
-      );
-    }),
-  { ssr: false }
-);
 
 const MOTION_CONFIG = {
   initial: { opacity: 0, y: 20 },
@@ -80,12 +32,10 @@ const MOTION_CONFIG = {
 type ChatMode = 'personal' | 'open';
 
 const Chat = () => {
-  const videoRef = useRef<HTMLVideoElement | null>(null);
   const searchParams = useSearchParams();
   const initialQuery = searchParams.get('query');
   const [autoSubmitted, setAutoSubmitted] = useState(false);
   const [loadingSubmit, setLoadingSubmit] = useState(false);
-  const [isTalking, setIsTalking] = useState(false);
   const [chatMode, setChatMode] = useState<ChatMode>('personal');
 
   const {
@@ -102,27 +52,13 @@ const Chat = () => {
     onResponse: (response) => {
       if (response) {
         setLoadingSubmit(false);
-        setIsTalking(true);
-        if (videoRef.current) {
-          videoRef.current.play().catch((error) => {
-            console.error('Failed to play video:', error);
-          });
-        }
       }
     },
     onFinish: () => {
       setLoadingSubmit(false);
-      setIsTalking(false);
-      if (videoRef.current) {
-        videoRef.current.pause();
-      }
     },
     onError: (error) => {
       setLoadingSubmit(false);
-      setIsTalking(false);
-      if (videoRef.current) {
-        videoRef.current.pause();
-      }
       console.error('Chat error:', error.message, error.cause);
       toast.error(`Error: ${error.message}`);
     },
@@ -164,20 +100,6 @@ const Chat = () => {
     return result;
   }, [messages]);
 
-  const activeToolName = useMemo(() => {
-    if (!currentAIMessage) return null;
-
-    const activeTool = currentAIMessage.parts?.find(
-      (part) =>
-        part.type === 'tool-invocation' &&
-        part.toolInvocation?.state === 'result'
-    );
-
-    return activeTool?.type === 'tool-invocation'
-      ? activeTool.toolInvocation.toolName
-      : null;
-  }, [currentAIMessage]);
-
   const isToolInProgress = messages.some(
     (m) =>
       m.role === 'assistant' &&
@@ -206,31 +128,12 @@ const Chat = () => {
   };
 
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.loop = true;
-      videoRef.current.muted = true;
-      videoRef.current.playsInline = true;
-      videoRef.current.pause();
-    }
-
     if (initialQuery && !autoSubmitted) {
       setAutoSubmitted(true);
       setInput('');
       submitQuery(initialQuery);
     }
   }, [initialQuery, autoSubmitted]);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      if (isTalking) {
-        videoRef.current.play().catch((error) => {
-          console.error('Failed to play video:', error);
-        });
-      } else {
-        videoRef.current.pause();
-      }
-    }
-  }, [isTalking]);
 
   //@ts-ignore
   const onSubmit = (e) => {
@@ -243,23 +146,24 @@ const Chat = () => {
   const handleStop = () => {
     stop();
     setLoadingSubmit(false);
-    setIsTalking(false);
-    if (videoRef.current) {
-      videoRef.current.pause();
-    }
   };
 
   // Check if this is the initial empty state (no messages)
   const isEmptyState =
     !currentAIMessage && !latestUserMessage && !loadingSubmit;
 
-  // Calculate header height based on hasActiveTool
-  const headerHeight = hasActiveTool ? 100 : 180;
-  const shouldDockAvatar = activeToolName === 'getPresentation';
+  // Top padding for scroll area (below fixed header strip + optional user bubble)
+  const headerHeight = hasActiveTool ? 72 : 96;
 
   return (
-    <LayoutGroup id="chat-avatar-transition">
+    <>
       <div className="relative h-screen overflow-hidden">
+        <div className="fixed top-6 left-4 z-[51] md:left-8">
+          <ChatModeToggle
+            chatMode={chatMode}
+            onChatModeChange={setChatMode}
+          />
+        </div>
         <div className="absolute top-6 right-8 z-51 flex flex-col-reverse items-center justify-center gap-1 md:flex-row">
           <WelcomeModal
             trigger={
@@ -273,28 +177,8 @@ const Chat = () => {
         {/* Fixed Avatar Header with Gradient */}
         <div className="fixed top-0 right-0 left-0 z-50 bg-gradient-to-b from-white via-white/95 via-50% to-transparent dark:from-black dark:via-black/95 dark:via-50% dark:to-transparent">
           <div
-            className={`transition-all duration-300 ease-in-out ${hasActiveTool ? 'pt-6 pb-0' : 'py-6'}`}
+            className={`transition-all duration-300 ease-in-out ${hasActiveTool ? 'pt-4 pb-0' : 'pt-4 pb-2'}`}
           >
-            <div className="flex justify-center">
-              <AnimatePresence initial={false}>
-                {!shouldDockAvatar && (
-                  <motion.div
-                    key="header-avatar"
-                    layoutId="chat-avatar"
-                    transition={{
-                      type: 'spring',
-                      stiffness: 260,
-                      damping: 26,
-                    }}
-                  >
-                    <ClientOnly>
-                      <Avatar hasActiveTool={hasActiveTool} />
-                    </ClientOnly>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-
             <AnimatePresence>
               {latestUserMessage && !currentAIMessage && (
                 <motion.div
@@ -340,7 +224,6 @@ const Chat = () => {
                     isLoading={isLoading}
                     reload={reload}
                     addToolResult={addToolResult}
-                    shouldDockAvatar={shouldDockAvatar}
                   />
                 </div>
               ) : (
@@ -360,7 +243,7 @@ const Chat = () => {
           </div>
 
           {/* Fixed Bottom Bar */}
-          <div className="sticky bottom-0 bg-white px-2 pt-3 transition-colors duration-300 md:px-0 md:pb-4 dark:bg-black">
+          <div className="sticky bottom-0 bg-white px-2 pt-3 transition-colors duration-300 md:px-0 md:pb-1 dark:bg-black">
             <div className="relative flex flex-col items-center gap-3">
               <HelperBoost submitQuery={submitQuery} />
               <ChatBottombar
@@ -371,7 +254,6 @@ const Chat = () => {
                 stop={handleStop}
                 isToolInProgress={isToolInProgress}
                 chatMode={chatMode}
-                onChatModeChange={setChatMode}
               />
             </div>
           </div>
@@ -386,7 +268,7 @@ const Chat = () => {
           </a>
         </div>
       </div>
-    </LayoutGroup>
+    </>
   );
 };
 

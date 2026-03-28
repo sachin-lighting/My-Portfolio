@@ -30,8 +30,130 @@ const PROJECT_CONTENT = [
     ],
     images: [
       {
-        src: '/projects/frontend-optimization-preview.svg',
-        alt: 'Frontend optimization and migration project preview',
+        src: '/projects/frontend-optimization-regent-catalog.png',
+        alt: 'Regent Lighting product catalog — recessed downlight grid',
+      },
+      {
+        src: '/projects/frontend-optimization-regent-filters.png',
+        alt: 'Regent Lighting product configuration and technical filters',
+      },
+    ],
+  },
+  {
+    title: 'Grocify Website',
+    description:
+      'A grocery storefront UI built for a React essentials assignment: hero with produce photography, category-filtered product grid, customer testimonials, dark-mode shop views, and an “Our process” journey from source to delivery. Deployed on Netlify with a clean orange-and-white brand system.',
+    techStack: [
+      'React',
+      'JavaScript',
+      'Responsive UI',
+      'Dark mode',
+      'E-commerce UI',
+      'Netlify',
+    ],
+    date: '2025',
+    links: [
+      {
+        name: 'Live site',
+        url: 'https://subtle-swan-d62032.netlify.app/process',
+      },
+      {
+        name: 'Source code',
+        url: 'https://github.com/sachin-prajapati-k/react-essentials-assignment/tree/main/grocify-clone',
+      },
+    ],
+    images: [
+      {
+        src: '/projects/grocify-hero.png',
+        alt: 'Grocify — landing hero with organic fruits and vegetables',
+      },
+      {
+        src: '/projects/grocify-shop-light.png',
+        alt: 'Grocify — product grid with category filters (light theme)',
+      },
+      {
+        src: '/projects/grocify-testimonials.png',
+        alt: 'Grocify — customer testimonials section',
+      },
+      {
+        src: '/projects/grocify-shop-dark.png',
+        alt: 'Grocify — product grid in dark theme',
+      },
+      {
+        src: '/projects/grocify-process.png',
+        alt: 'Grocify — Our process page',
+      },
+    ],
+  },
+  {
+    title: 'Personal Expense Tracker',
+    description:
+      'A Create React App project built around custom hooks: add and edit expenses with categories and dates, filter by category and date range, search by title, sort by date/amount/category, and view summary tiles for total spend, visible count, and latest monthly total. Data persists in localStorage; deployed on Netlify.',
+    techStack: [
+      'React',
+      'JavaScript',
+      'Custom Hooks',
+      'localStorage',
+      'Create React App',
+      'Netlify',
+    ],
+    date: '2025',
+    links: [
+      {
+        name: 'Live site',
+        url: 'https://darling-paletas-b03d4f.netlify.app/',
+      },
+      {
+        name: 'Source code',
+        url: 'https://github.com/sachin-prajapati-k/react-essentials-assignment/tree/main/personal-expense-tracker',
+      },
+    ],
+    images: [
+      {
+        src: '/projects/personal-expense-tracker-1.png',
+        alt: 'Personal Expense Tracker — dashboard with add expense, filters, summary, and list',
+      },
+      {
+        src: '/projects/personal-expense-tracker-2.png',
+        alt: 'Personal Expense Tracker — form and date picker',
+      },
+      {
+        src: '/projects/personal-expense-tracker-3.png',
+        alt: 'Personal Expense Tracker — full app view',
+      },
+    ],
+  },
+  {
+    title: 'Weather Information Dashboard',
+    description:
+      'A dark-themed weather dashboard built with React: fetch live conditions by city via a weather API, show temperature, condition, humidity, and wind speed, and surface metadata like selected city, last updated time, and current window width. Side effects use useEffect with proper cleanup.',
+    techStack: [
+      'React',
+      'JavaScript',
+      'useEffect',
+      'REST API',
+      'Create React App',
+      'Netlify',
+    ],
+    date: '2025',
+    links: [
+      {
+        name: 'Live site',
+        url: 'https://celadon-kringle-13e4ac.netlify.app/',
+      },
+      {
+        name: 'Source code',
+        url: 'https://github.com/sachin-prajapati-k/react-essentials-assignment/tree/main/weather-app',
+      },
+    ],
+    images: [
+      {
+        src: '/projects/weather-dashboard-1.png',
+        alt: 'Weather Information Dashboard — search and current conditions',
+      },
+      {
+        src: '/projects/weather-dashboard-2.png',
+        alt: 'Weather Information — city weather metrics',
       },
     ],
   },
@@ -246,9 +368,33 @@ export const data = [
   {
     category: 'Professional Work',
     title: 'Frontend Optimization & Migration Project',
-    src: '/projects/frontend-optimization-preview.svg',
+    src: '/projects/frontend-optimization-regent-catalog.png',
     content: (
       <ProjectContent project={{ title: 'Frontend Optimization & Migration Project' }} />
+    ),
+  },
+  {
+    category: 'Grocery E-commerce',
+    title: 'Grocify Website',
+    src: '/projects/grocify-hero.png',
+    content: (
+      <ProjectContent project={{ title: 'Grocify Website' }} />
+    ),
+  },
+  {
+    category: 'Productivity App',
+    title: 'Personal Expense Tracker',
+    src: '/projects/personal-expense-tracker-1.png',
+    content: (
+      <ProjectContent project={{ title: 'Personal Expense Tracker' }} />
+    ),
+  },
+  {
+    category: 'Weather & API',
+    title: 'Weather Information Dashboard',
+    src: '/projects/weather-dashboard-1.png',
+    content: (
+      <ProjectContent project={{ title: 'Weather Information Dashboard' }} />
     ),
   },
   {

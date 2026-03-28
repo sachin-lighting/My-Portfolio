@@ -11,13 +11,11 @@ import Sports from '../sport';
 interface ToolRendererProps {
   toolInvocations: any[];
   messageId: string;
-  shouldDockAvatar?: boolean;
 }
 
 export default function ToolRenderer({
   toolInvocations,
   messageId,
-  shouldDockAvatar = false,
 }: ToolRendererProps) {
   return (
     <div className="w-full transition-all duration-300">
@@ -42,7 +40,7 @@ export default function ToolRenderer({
                 key={toolCallId}
                 className="w-full overflow-hidden rounded-lg"
               >
-                <Presentation showFloatingAvatar={shouldDockAvatar} />
+                <Presentation />
               </div>
             );
 

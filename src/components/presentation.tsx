@@ -4,13 +4,7 @@ import { motion, type Variants } from 'framer-motion';
 import Image from 'next/image';
 import React from 'react';
 
-interface PresentationProps {
-  showFloatingAvatar?: boolean;
-}
-
-export function Presentation({
-  showFloatingAvatar = false,
-}: PresentationProps) {
+export function Presentation() {
   // Personal information
   const profile = {
     name: 'Sachin Prajapati',
@@ -52,23 +46,6 @@ export function Presentation({
       <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2">
         {/* Image section */}
         <div className="relative mx-auto aspect-square w-full max-w-sm">
-          {showFloatingAvatar && (
-            <motion.div
-              layoutId="chat-avatar"
-              transition={{ type: 'spring', stiffness: 260, damping: 26 }}
-              className="absolute top-3 left-3 z-10 h-20 w-20 overflow-hidden rounded-full shadow-lg ring-4 ring-white dark:ring-black"
-            >
-              <video
-                src="/sachin-avatar.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="h-full w-full scale-[1.08] object-contain object-top mix-blend-multiply"
-                aria-label="Sachin Prajapati avatar"
-              />
-            </motion.div>
-          )}
           <div className="relative h-full w-full overflow-hidden rounded-2xl">
             <motion.div
               initial={{ scale: 0.92, opacity: 0 }}

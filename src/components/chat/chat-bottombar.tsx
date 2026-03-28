@@ -6,7 +6,35 @@ import { ArrowUp } from 'lucide-react';
 import React, { useEffect } from 'react';
 import { cn } from '@/lib/utils';
 
-type ChatMode = 'personal' | 'open';
+export type ChatMode = 'personal' | 'open';
+
+export function ChatModeToggle({
+  chatMode,
+  onChatModeChange,
+}: {
+  chatMode: ChatMode;
+  onChatModeChange: (mode: ChatMode) => void;
+}) {
+  return (
+    <div className="inline-flex rounded-full border border-[#E5E5E9] bg-[#ECECF0] p-1 dark:border-neutral-700 dark:bg-neutral-800">
+      {(['personal', 'open'] as const).map((mode) => (
+        <button
+          key={mode}
+          type="button"
+          onClick={() => onChatModeChange(mode)}
+          className={cn(
+            'rounded-full px-4 py-1.5 text-sm font-medium capitalize transition-colors',
+            chatMode === mode
+              ? 'bg-[#0171E3] text-white'
+              : 'text-neutral-600 hover:text-black dark:text-neutral-300 dark:hover:text-white'
+          )}
+        >
+          {mode}
+        </button>
+      ))}
+    </div>
+  );
+}
 
 interface ChatBottombarProps {
   handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -16,7 +44,6 @@ interface ChatBottombarProps {
   input: string;
   isToolInProgress: boolean;
   chatMode: ChatMode;
-  onChatModeChange: (mode: ChatMode) => void;
 }
 
 export default function ChatBottombar({
@@ -27,7 +54,6 @@ export default function ChatBottombar({
   stop,
   isToolInProgress,
   chatMode,
-  onChatModeChange,
 }: ChatBottombarProps) {
   const inputRef = React.useRef<HTMLInputElement>(null);
 
@@ -53,28 +79,8 @@ export default function ChatBottombar({
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="w-full pb-2 md:pb-8"
+      className="w-full pb-0.5 md:pb-2"
     >
-      <div className="mb-3 flex w-full justify-start px-1 md:px-4">
-        <div className="inline-flex rounded-full border border-[#E5E5E9] bg-[#ECECF0] p-1 dark:border-neutral-700 dark:bg-neutral-800">
-          {(['personal', 'open'] as const).map((mode) => (
-            <button
-              key={mode}
-              type="button"
-              onClick={() => onChatModeChange(mode)}
-              className={cn(
-                'rounded-full px-4 py-1.5 text-sm font-medium capitalize transition-colors',
-                chatMode === mode
-                  ? 'bg-[#0171E3] text-white'
-                  : 'text-neutral-600 hover:text-black dark:text-neutral-300 dark:hover:text-white'
-              )}
-            >
-              {mode}
-            </button>
-          ))}
-        </div>
-      </div>
-
       <form onSubmit={handleSubmit} className="relative w-full md:px-4">
         <div className="mx-auto flex items-center rounded-full border border-[#E5E5E9] bg-[#ECECF0] py-2 pr-2 pl-6 dark:border-neutral-700 dark:bg-neutral-800">
           <input
