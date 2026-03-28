@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#082f49"/>
+  <rect x="48" y="48" width="1184" height="624" rx="30" fill="#0f172a" stroke="#1d4ed8"/>
+  <text x="90" y="180" fill="#f8fafc" font-family="Arial, sans-serif" font-size="56" font-weight="700">ShopSphere Commerce</text>
+  <text x="90" y="250" fill="#60a5fa" font-family="Arial, sans-serif" font-size="34">Shopping Project</text>
+  <text x="90" y="360" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="26">Product browsing " Storefront UI " E-commerce flow</text>
+</svg>

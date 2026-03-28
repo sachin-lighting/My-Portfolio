@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#052e16"/>
+  <rect x="48" y="48" width="1184" height="624" rx="30" fill="#0f172a" stroke="#22c55e"/>
+  <text x="90" y="180" fill="#f8fafc" font-family="Arial, sans-serif" font-size="56" font-weight="700">Expense Tracker</text>
+  <text x="90" y="250" fill="#4ade80" font-family="Arial, sans-serif" font-size="34">Dashboard</text>
+  <text x="90" y="360" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="26">Transactions " Tracking " Personal finance UI</text>
+</svg>
