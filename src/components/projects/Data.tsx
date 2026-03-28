@@ -55,7 +55,7 @@ const PROJECT_CONTENT = [
     links: [
       {
         name: 'Live site',
-        url: 'https://subtle-swan-d62032.netlify.app/process',
+        url: 'https://subtle-swan-d62032.netlify.app/',
       },
       {
         name: 'Source code',
